@@ -13,18 +13,18 @@ const ServerTimePage: NextPage<{ serverTime: number }> = ({ serverTime }) => {
     // Fonction pour formater la différence en jours, heures, minutes et secondes
     const formatTimeDiff = (diff: number): string => {
       // Calculs pour les jours, heures, minutes et secondes
-      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const jours = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const heures = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
       const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
       const seconds = Math.floor((diff % (1000 * 60)) / 1000);
   
       // Formatage de la chaîne de résultat donner
       let result = '';
-      if (days > 0) {
-        result += `${days} jour(s), `;
+      if (jours > 0) {
+        result += `${jours} jour(s), `;
       }
-      if (hours > 0) {
-        result += `${hours} heure(s), `;
+      if (heures > 0) {
+        result += `${heures} heure(s), `;
       }
       if (minutes > 0) {
         result += `${minutes} minute(s), `;
